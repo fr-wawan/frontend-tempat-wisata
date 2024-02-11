@@ -4,10 +4,13 @@
             <HeaderHome />
         </div>
 
+        <PlaceCard />
     </div>
 </template>
 
 <script setup>
 import HeaderHome from '@/components/HeaderHome.vue';
 import PlaceCard from '@/components/PlaceCard.vue';
+
+
 </script>
