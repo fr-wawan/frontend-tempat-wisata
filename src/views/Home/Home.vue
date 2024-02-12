@@ -1,14 +1,13 @@
 <template>
     <div class="py-8">
-        <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-10/12">
+        <div class="mx-48">
             <Hero />
             <Sponsor />
-            <div class="mt-14">
-                <Place />
-            </div>
-            <div class="mt-14">
-                <Article />
-            </div>
+            <Place />
+            <Reservation />
+            <Maps />
+            <Article />
+            <Testimonial />
         </div>
 
         <div class="bg-gray-100 p-5 mt-10">
@@ -24,6 +23,9 @@
 import Hero from '@/components/Home/Hero.vue';
 import Sponsor from "@/components/Home/Sponsor.vue";
 import Place from '@/components/Home/Place.vue';
+import Reservation from '@/components/Home/Reservation.vue';
+import Maps from '@/components/Home/Maps.vue';
 import Article from '@/components/Home/Article.vue';
+import Testimonial from "@/components/Home/Testimonial.vue";
 import Video from '@/components/Home/Video.vue';
 </script>

@@ -1,19 +1,14 @@
 <template>
-    <router-link :to="`/tempat-wisata/${place.slug}`" class="bg-white rounded-xl shadow-md flex">
-        <img :src="getImage(place.image)" alt="" class="w-96 rounded-l-xl">
-        <div class="p-5">
-            <h1 class="text-2xl font-semibold">{{ place.name }}</h1>
-            <div class="text-gray-600 my-3 text-sm flex items-center gap-x-1">
-                <MapPinIcon :stroke-width="1.5" />
-                <span>{{ place.address }}</span>
-            </div>
-            <p v-html="truncate(place.description, 300)"></p>
+    <router-link :to="`/tempat-wisata/${place.slug}`" class="relative">
+        <img :src="getImage(place.image)" alt="" class="rounded-lg">
+        <div class="absolute bottom-0 bg-white/60 backdrop-blur-sm p-5 pr-12">
+            <h4 class="font-bold">{{ place.name }}</h4>
+            <p class="text-[#80918E]">{{ place.address }}</p>
         </div>
     </router-link>
 </template>
 
 <script setup>
-import { MapPinIcon } from "vue-tabler-icons";
 const props = defineProps({
     place: Object
 })

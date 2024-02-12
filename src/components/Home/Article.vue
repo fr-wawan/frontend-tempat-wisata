@@ -1,14 +1,24 @@
 <template>
-    <div class="mb-10 flex items-center justify-between ">
-        <h1 class="text-2xl font-bold">Artikel</h1>
-        <router-link to="/artikel" class="mt-0.5 flex items-center text-blue-600">
-            Lihat Semua
-            <ChevronRightIcon :stroke-width="1.5" :size="26" />
-        </router-link>
-
-    </div>
-    <div class="grid grid-cols-4 gap-5">
-        <ArticleCard :article="article" v-for="article in articles" :key="article.id" />
+    <div class="mt-24">
+        <div class="flex items-center justify-between">
+            <div>
+                <h3 class="font-extrabold text-[#4475F2] text-lg">
+                    MENGENAL DESTINIZE
+                </h3>
+                <h1 class="font-extrabold text-5xl mt-5">
+                    🌏 • Blog Travel
+                </h1>
+            </div>
+            <div>
+                <a href="" class="text-[#4475F2] font-semibold flex items-center gap-4">
+                    <span>Lihat Semua</span>
+                    <RightArrow />
+                </a>
+            </div>
+        </div>
+        <div class="grid grid-cols-4 gap-5 mt-10">
+            <ArticleCard :article="article" v-for="article in articles" :key="article.id" />
+        </div>
     </div>
 </template>
 
@@ -16,7 +26,7 @@
 import { useArticleStore } from '@/stores/article';
 import { onMounted, computed } from 'vue';
 
-import { ChevronRightIcon } from "vue-tabler-icons";
+import RightArrow from "@/components/icon/RightArrow.vue";
 import ArticleCard from '../ArticleCard.vue';
 
 const store = useArticleStore();
