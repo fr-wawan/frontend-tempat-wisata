@@ -16,9 +16,10 @@ import Pagination from '@/components/Pagination.vue';
 import PlaceCard from '@/components/PlaceCard.vue';
 
 const store = usePlaceStore();
+const paginate = ref(6);
 
 onMounted(() => {
-    store.getPlaces(1, 6);
+    store.getPlaces(1, paginate.value);
 });
 
 const places = computed(() => {
@@ -35,7 +36,7 @@ const totalPages = computed(() => {
 
 const goToPage = (page) => {
     scrollToTop();
-    store.getPlaces(page, 6);
+    store.getPlaces(page, paginate.value);
 }
 
 const scrollToTop = () => {

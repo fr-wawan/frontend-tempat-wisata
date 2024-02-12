@@ -9,6 +9,18 @@ const mixins = {
 
       return result;
     },
+
+    getYoutube(value) {
+      return `https://www.youtube.com/embed/${value}`;
+    },
+
+    getYoutubeThumbnail(value) {
+      let queryStringPattern = /\?si=[^&]+/;
+
+      let modifiedUrl = value.replace(queryStringPattern, "");
+
+      return `https://i1.ytimg.com/vi/${modifiedUrl}/maxresdefault.jpg `;
+    },
   },
 };
 

@@ -5,7 +5,7 @@
             <div class="flex items-center gap-3">
                 <router-link to="/">Home</router-link>
                 <router-link to="/tempat-wisata">Tempat Wisata</router-link>
-                <router-link to="/">Artikel</router-link>
+                <router-link to="/artikel">Artikel</router-link>
             </div>
 
         </nav>
