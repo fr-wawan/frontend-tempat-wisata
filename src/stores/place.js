@@ -28,5 +28,6 @@ export const usePlaceStore = defineStore("place", () => {
       place.value = response.data.data;
     });
   }
+
   return { places, currentPage, totalPages, place, getPlaces, getDetailPlaces };
 });

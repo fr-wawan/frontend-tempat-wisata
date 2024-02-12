@@ -3,8 +3,9 @@ const mixins = {
     getImage(image) {
       return `${import.meta.env.VITE_STORAGE_URL}/${image}`;
     },
-    truncateDescription(value) {
-      let result = value.slice(0, 300) + (value.length > 100 ? "..." : "");
+    truncate(value, number) {
+      let result =
+        value.slice(0, number) + (value.length > number ? "..." : "");
 
       return result;
     },

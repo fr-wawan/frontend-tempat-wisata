@@ -1,17 +1,13 @@
 <template>
     <div class="py-8 ">
         <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-8/12 ">
-            <img :src="getImage(place.image)" alt="" class="w-full max-h-[40rem] object-cover rounded-xl">
+            <img :src="getImage(article.image)" alt="" class="w-full max-h-[40rem] object-cover rounded-xl">
 
             <div class="my-10">
-                <h1 class="text-4xl mb-4 font-bold text-blue-950 pb-3">{{ place.name }}</h1>
-                <div class="text-gray-600 mb-3  flex items-center gap-x-1">
+                <h1 class="text-4xl mb-2 font-bold text-blue-950 pb-3">{{ article.title }}</h1>
+                <div class="text-gray-600  flex items-center gap-x-1">
                     <CalendarIcon :stroke-width="1.5" />
-                    <span>{{ place.created_at }}</span>
-                </div>
-                <div class="text-gray-600 text-sm flex items-center gap-x-1">
-                    <MapPinIcon :stroke-width="1.5" />
-                    <span>{{ place.address }}</span>
+                    <span>{{ article.created_at }}</span>
                 </div>
             </div>
 
@@ -30,31 +26,31 @@
                     <h3>KOMENTAR</h3>
                 </div>
             </div>
-            <component :is="component" :description="place.description"> </component>
+            <component :is="component" :description="article.content"> </component>
         </div>
     </div>
 </template>
 
 <script setup>
-import { usePlaceStore } from "@/stores/place";
-import { onMounted, shallowRef, computed } from 'vue';
-import { useRoute } from "vue-router";
+import { useArticleStore } from '@/stores/article';
+import { onMounted, computed, shallowRef } from 'vue';
+import { useRoute } from 'vue-router';
 
-import { MapPinIcon, CalendarIcon } from "vue-tabler-icons";
+import { CalendarIcon } from 'vue-tabler-icons';
 import Description from "@/components/Description.vue";
 import Comment from "@/components/Comment.vue";
 
-const store = usePlaceStore();
+const store = useArticleStore();
 const route = useRoute();
 
 const component = shallowRef(Description);
 
 onMounted(() => {
-    store.getDetailPlaces(route.params.slug);
+    store.getDetailArticles(route.params.slug);
 });
 
-const place = computed(() => {
-    return store.place;
+const article = computed(() => {
+    return store.article;
 })
 
 const changeComponent = (comp) => {

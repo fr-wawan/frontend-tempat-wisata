@@ -8,8 +8,6 @@
     </div>
 
     <PlaceCard v-for="place in places" :key="place.id" :place="place" class="mb-10" />
-
-    <!-- <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage" /> -->
 </template>
 
 <script setup>
@@ -18,7 +16,6 @@ import { onMounted, ref, computed } from 'vue';
 import { ChevronRightIcon } from "vue-tabler-icons";
 
 import PlaceCard from '@/components/PlaceCard.vue';
-import Pagination from '../Pagination.vue';
 
 const store = usePlaceStore();
 
@@ -29,16 +26,4 @@ onMounted(() => {
 const places = computed(() => {
     return store.places;
 });
-
-const currentPage = computed(() => {
-    return store.currentPage;
-})
-
-const totalPages = computed(() => {
-    return store.totalPages;
-});
-
-const goToPage = (page) => {
-    store.getPlaces(page);
-}
 </script>

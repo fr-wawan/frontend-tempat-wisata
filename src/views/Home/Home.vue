@@ -6,6 +6,9 @@
             <div class="mt-14">
                 <Place />
             </div>
+            <div class="mt-14">
+                <Article />
+            </div>
         </div>
     </div>
 </template>
@@ -13,4 +16,5 @@
 <script setup>
 import Slider from '@/components/Home/Slider.vue';
 import Place from '@/components/Home/Place.vue';
+import Article from '@/components/Home/Article.vue';
 </script>

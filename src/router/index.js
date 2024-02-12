@@ -10,9 +10,19 @@ const router = createRouter({
       component: Home,
     },
     {
+      path: "/tempat-wisata",
+      name: "place.index",
+      component: () => import("@/views/Place/Place.vue"),
+    },
+    {
       path: "/tempat-wisata/:slug",
       name: "place.show",
       component: () => import("@/views/Place/DetailPlace.vue"),
+    },
+    {
+      path: "/artikel/:slug",
+      name: "artikel.show",
+      component: () => import("@/views/Article/DetailArticle.vue"),
     },
   ],
 });
