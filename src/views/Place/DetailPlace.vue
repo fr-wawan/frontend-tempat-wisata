@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 mb-10">
+            <div class="grid grid-cols-3 mb-10">
                 <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer"
                     @click="changeComponent(Description)" :class="component.__name == 'Description'
                         ? 'border-b-[#00467B] text-[#00467B]'
@@ -23,14 +23,21 @@
                         ">
                     <h3 class="">DESKRIPSI</h3>
                 </div>
-                <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer" @click="changeComponent(Comment)"
-                    :class="component.__name == 'Comment'
+                <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer" @click="changeComponent(Maps)"
+                    :class="component.__name == 'Maps'
+                        ? 'border-b-[#00467B] text-[#00467B]'
+                        : ' text-gray-500'
+                        ">
+                    <h3 class="">MAPS</h3>
+                </div>
+                <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer"
+                    @click="changeComponent(PlaceComment)" :class="component.__name == 'PlaceComment'
                         ? 'border-b-[#00467B] text-[#00467B]'
                         : ' text-gray-500'">
                     <h3>KOMENTAR</h3>
                 </div>
             </div>
-            <component :is="component" :description="place.description"> </component>
+            <component :is="component" :description="place.description" :place="place"> </component>
         </div>
     </div>
 </template>
@@ -42,7 +49,8 @@ import { useRoute } from "vue-router";
 
 import { MapPinIcon, CalendarIcon } from "vue-tabler-icons";
 import Description from "@/components/Description.vue";
-import Comment from "@/components/Comment.vue";
+import PlaceComment from "@/components/PlaceComment.vue";
+import Maps from "@/components/Maps.vue";
 
 const store = usePlaceStore();
 const route = useRoute();

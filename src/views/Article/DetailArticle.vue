@@ -19,31 +19,34 @@
                         ">
                     <h3 class="">DESKRIPSI</h3>
                 </div>
-                <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer" @click="changeComponent(Comment)"
-                    :class="component.__name == 'Comment'
+                <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer"
+                    @click="changeComponent(ArticleComment)" :class="component.__name == 'ArticleComment'
                         ? 'border-b-[#00467B] text-[#00467B]'
                         : ' text-gray-500'">
                     <h3>KOMENTAR</h3>
                 </div>
             </div>
-            <component :is="component" :description="article.content"> </component>
+
+            <component :is="component" :description="article.content" :article="article">
+            </component>
         </div>
     </div>
 </template>
 
 <script setup>
 import { useArticleStore } from '@/stores/article';
-import { onMounted, computed, shallowRef } from 'vue';
+import { onMounted, computed, shallowRef, reactive } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { CalendarIcon } from 'vue-tabler-icons';
 import Description from "@/components/Description.vue";
-import Comment from "@/components/Comment.vue";
+import ArticleComment from '@/components/ArticleComment.vue';
 
 const store = useArticleStore();
 const route = useRoute();
 
 const component = shallowRef(Description);
+
 
 onMounted(() => {
     store.getDetailArticles(route.params.slug);
@@ -56,4 +59,5 @@ const article = computed(() => {
 const changeComponent = (comp) => {
     component.value = comp;
 }
+
 </script>

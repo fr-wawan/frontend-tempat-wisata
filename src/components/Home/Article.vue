@@ -1,7 +1,7 @@
 <template>
     <div class="mb-10 flex items-center justify-between ">
         <h1 class="text-2xl font-bold">Artikel</h1>
-        <router-link to="/artikel" class="mt-0.5 flex items-center text-gray-700">
+        <router-link to="/artikel" class="mt-0.5 flex items-center text-blue-600">
             Lihat Semua
             <ChevronRightIcon :stroke-width="1.5" :size="26" />
         </router-link>
