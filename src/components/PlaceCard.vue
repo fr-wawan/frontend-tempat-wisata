@@ -1,10 +1,13 @@
 <template>
     <div class="bg-white rounded-xl shadow-md flex">
-        <img :src="getImage(place.image)" alt="" class="w-3/12 rounded-l-xl">
+        <img :src="getImage(place.image)" alt="" class="w-96 rounded-l-xl">
         <div class="p-5">
             <h1 class="text-2xl font-semibold">{{ place.name }}</h1>
-            <p class="text-gray-600 my-3 text-sm">{{ place.address }}</p>
-            <p v-html="place.description"></p>
+            <div class="text-gray-600 my-3 text-sm flex items-center gap-x-1">
+                <MapPinIcon :stroke-width="1.5" />
+                <span>{{ place.address }}</span>
+            </div>
+            <p v-html="truncateDescription(place.description)"></p>
 
             <div class="text-right my-5">
                 <router-link to="/"
@@ -15,6 +18,7 @@
 </template>
 
 <script setup>
+import { MapPinIcon } from "vue-tabler-icons";
 const props = defineProps({
     place: Object
 })
