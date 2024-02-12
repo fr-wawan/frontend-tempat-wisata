@@ -9,6 +9,11 @@ const router = createRouter({
       name: "home",
       component: Home,
     },
+    {
+      path: "/tempat-wisata/:slug",
+      name: "place.show",
+      component: () => import("@/views/Place/DetailPlace.vue"),
+    },
   ],
 });
 

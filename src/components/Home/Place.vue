@@ -9,7 +9,7 @@
 
     <PlaceCard v-for="place in places" :key="place.id" :place="place" class="mb-10" />
 
-    <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage" />
+    <!-- <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage" /> -->
 </template>
 
 <script setup>
@@ -23,7 +23,7 @@ import Pagination from '../Pagination.vue';
 const store = usePlaceStore();
 
 onMounted(() => {
-    store.getPlaces();
+    store.getPlaces(1, 4);
 });
 
 const places = computed(() => {

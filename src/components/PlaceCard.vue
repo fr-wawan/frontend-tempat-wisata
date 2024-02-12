@@ -10,7 +10,7 @@
             <p v-html="truncateDescription(place.description)"></p>
 
             <div class="text-right my-5">
-                <router-link to="/"
+                <router-link :to="`/tempat-wisata/${place.slug}`"
                     class="bg-blue-500 text-white p-3 px-5 rounded-lg border-2 border-blue-600 hover:bg-white hover:text-blue-500 hover:transition-all hover:duration-300">Selengkapnya...</router-link>
             </div>
         </div>

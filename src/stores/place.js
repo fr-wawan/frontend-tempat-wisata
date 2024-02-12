@@ -4,6 +4,7 @@ import api from "@/Api/api";
 
 export const usePlaceStore = defineStore("place", () => {
   const places = ref([]);
+  const place = ref({});
   const currentPage = ref(1);
   const totalPages = ref(1);
 
@@ -21,5 +22,11 @@ export const usePlaceStore = defineStore("place", () => {
         places.value = response.data.data.data;
       });
   }
-  return { places, currentPage, totalPages, getPlaces };
+
+  function getDetailPlaces(slug) {
+    api.get(`places/${slug}`, {}).then((response) => {
+      place.value = response.data.data;
+    });
+  }
+  return { places, currentPage, totalPages, place, getPlaces, getDetailPlaces };
 });
