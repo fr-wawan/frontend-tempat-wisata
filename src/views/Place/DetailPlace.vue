@@ -49,8 +49,8 @@ import { useRoute } from "vue-router";
 
 import { MapPinIcon, CalendarIcon } from "vue-tabler-icons";
 import Description from "@/components/Description.vue";
-import PlaceComment from "@/components/PlaceComment.vue";
 import Maps from "@/components/Maps.vue";
+import PlaceComment from "@/components/Place/PlaceComment.vue";
 
 const store = usePlaceStore();
 const route = useRoute();

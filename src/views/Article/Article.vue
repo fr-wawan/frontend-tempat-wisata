@@ -12,7 +12,7 @@
 import { useArticleStore } from '@/stores/article';
 import { onMounted, computed } from 'vue';
 
-import ArticleCard from '@/components/ArticleCard.vue';
+import ArticleCard from '@/components/Article/ArticleCard.vue';
 
 const store = useArticleStore();
 

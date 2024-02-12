@@ -1,24 +1,21 @@
 <template>
     <div>
         <Comment :form="form" @store-comment="storeComment" :comments="comments" />
-
-        <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage"
-            v-if="comments.length >= 10" />
     </div>
 </template>
 
 <script setup>
-import { useArticleCommentStore } from '@/stores/articleComment';
+import { usePlaceCommentStore } from '@/stores/placeComment';
 import { onMounted, reactive, computed } from 'vue';
 import { useToast } from "vue-toastification";
 
-import Comment from './Comment.vue';
-import Pagination from './Pagination.vue';
-const props = defineProps({
-    article: Object
-});
+import Comment from '../Comment.vue';
+import Pagination from '../Pagination.vue';
 
-const store = useArticleCommentStore();
+const props = defineProps({
+    place: Object
+});
+const store = usePlaceCommentStore();
 const toast = useToast();
 
 const form = reactive({
@@ -27,7 +24,7 @@ const form = reactive({
 })
 
 onMounted(() => {
-    store.getComments(props.article.id);
+    store.getComments(props.place.id);
 })
 
 const comments = computed(() => {
@@ -43,19 +40,20 @@ const totalPages = computed(() => {
 });
 
 const goToPage = (page) => {
-    store.getComments(props.article.id, page);
+    store.getComments(props.place.id, page);
 }
 
 const storeComment = async () => {
     const params = {
         name: form.name,
         comment: form.comment,
-        article_id: props.article.id
+        place_id: props.place.id
     };
     await store.storeComment(params);
     form.name = "";
     form.comment = "";
     toast.success("Berhasil Komen!");
-    store.getComments(props.article.id);
+    store.getComments(props.place.id);
 }
+
 </script>

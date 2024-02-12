@@ -27,7 +27,7 @@ import { useArticleStore } from '@/stores/article';
 import { onMounted, computed } from 'vue';
 
 import RightArrow from "@/components/icon/RightArrow.vue";
-import ArticleCard from '../ArticleCard.vue';
+import ArticleCard from '../Article/ArticleCard.vue';
 
 const store = useArticleStore();
 

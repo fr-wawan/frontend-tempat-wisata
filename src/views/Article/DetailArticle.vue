@@ -40,7 +40,7 @@ import { useRoute } from 'vue-router';
 
 import { CalendarIcon } from 'vue-tabler-icons';
 import Description from "@/components/Description.vue";
-import ArticleComment from '@/components/ArticleComment.vue';
+import ArticleComment from '@/components/Article/ArticleComment.vue';
 
 const store = useArticleStore();
 const route = useRoute();

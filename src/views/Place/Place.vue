@@ -13,7 +13,7 @@ import { usePlaceStore } from '@/stores/place';
 import { onMounted, ref, computed } from 'vue';
 
 import Pagination from '@/components/Pagination.vue';
-import PlaceCard from '@/components/PlaceCard.vue';
+import PlaceCard from '@/components/Place/PlaceCard.vue';
 
 const store = usePlaceStore();
 const paginate = ref(6);

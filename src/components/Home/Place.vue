@@ -2,6 +2,7 @@
     <div class="mt-20">
         <h3 class="font-extrabold text-[#4475F2]">DESTINASI FAVORIT</h3>
 
+
         <div class="flex justify-between mt-5">
             <h1 class="font-extrabold text-4xl">Temukan Destinasi Favoritmu</h1>
             <a href="" class="text-[#4475F2] font-semibold flex items-center gap-4">
@@ -21,7 +22,7 @@ import { onMounted, ref, computed } from 'vue';
 import { ChevronRightIcon } from "vue-tabler-icons";
 
 import RightArrow from "@/components/icon/RightArrow.vue";
-import PlaceCard from '@/components/PlaceCard.vue';
+import PlaceCard from '../Place/PlaceCard.vue';
 
 const store = usePlaceStore();
 
