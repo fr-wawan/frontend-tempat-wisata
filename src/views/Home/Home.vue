@@ -8,6 +8,7 @@
             <Maps />
             <Article />
             <Testimonial />
+            <Question />
         </div>
 
         <div class="bg-gray-100 p-5 mt-10">
@@ -27,5 +28,6 @@ import Reservation from '@/components/Home/Reservation.vue';
 import Maps from '@/components/Home/Maps.vue';
 import Article from '@/components/Home/Article.vue';
 import Testimonial from "@/components/Home/Testimonial.vue";
+import Question from '@/components/Home/Question.vue';
 import Video from '@/components/Home/Video.vue';
 </script>
