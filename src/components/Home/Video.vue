@@ -1,5 +1,13 @@
 <template>
-    <div>
+    <div class="mt-28">
+        <div class="mb-16">
+            <h3 class="font-extrabold text-[#4475F2] text-lg">
+                GALLERY VIDEO
+            </h3>
+            <h1 class="font-extrabold text-5xl mt-5">
+                🎥 • Video Travel
+            </h1>
+        </div>
         <swiper :slidesPerView="numberOfSlides" :spaceBetween="30" :autoplay="{ delay: 2500, disableOnInteraction: false }"
             :pagination="{ clickable: true }" :modules="modules">
             <SwiperSlide class="flex " v-for="video in videos" :key="video.id">
