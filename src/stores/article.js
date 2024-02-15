@@ -30,5 +30,12 @@ export const useArticleStore = defineStore("article", () => {
     });
   }
 
-  return { articles, getArticles, getDetailArticles, article };
+  return {
+    articles,
+    getArticles,
+    getDetailArticles,
+    article,
+    currentPage,
+    totalPages,
+  };
 });

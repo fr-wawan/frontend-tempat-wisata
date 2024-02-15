@@ -1,6 +1,8 @@
 <template>
     <div>
         <Comment :form="form" @store-comment="storeComment" :comments="comments" />
+        <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage"
+            v-if="comments.length >= 10" />
     </div>
 </template>
 

@@ -1,7 +1,9 @@
 <template>
     <div class="border-b">
         <div class="flex w-full items-center gap-12 px-48 py-7">
-            <Logo />
+            <router-link to="/">
+                <Logo />
+            </router-link>
 
             <div class="w-[52%]">
                 <input type="text" class="rounded-full p-4 w-full icon-search bg-[#F0F1F2] placeholder:text-sm"
@@ -21,7 +23,7 @@
                 <div>
                     <span>Lokasi</span>
                     <div class="text-[#4475F2] font-semibold flex gap-2">
-                        <p>Indonesia, Yogyakarta</p>
+                        <p>Indonesia, Samarinda</p>
                         <DownArrowBoldBlue />
                     </div>
                 </div>

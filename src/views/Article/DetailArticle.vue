@@ -17,7 +17,7 @@
                         ? 'border-b-[#00467B] text-[#00467B]'
                         : ' text-gray-500'
                         ">
-                    <h3 class="">DESKRIPSI</h3>
+                    <h3 class="">KONTEN</h3>
                 </div>
                 <div class="text-center border-b-2 pb-2 font-bold text-xl cursor-pointer"
                     @click="changeComponent(ArticleComment)" :class="component.__name == 'ArticleComment'

@@ -10,10 +10,10 @@
                 </h1>
             </div>
             <div>
-                <a href="" class="text-[#4475F2] font-semibold flex items-center gap-4">
+                <router-link to="/artikel" href="" class="text-[#4475F2] font-semibold flex items-center gap-4">
                     <span>Lihat Semua</span>
                     <RightArrow />
-                </a>
+                </router-link>
             </div>
         </div>
         <div class="grid grid-cols-4 gap-5 mt-10">
@@ -32,7 +32,7 @@ import ArticleCard from '../Article/ArticleCard.vue';
 const store = useArticleStore();
 
 onMounted(() => {
-    store.getArticles(1, 8);
+    store.getArticles(1, 4);
 });
 
 const articles = computed(() => {

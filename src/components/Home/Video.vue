@@ -21,7 +21,8 @@
             </SwiperSlide>
         </swiper>
         <Modal v-if="isOpen" @closeModal="closeModal">
-            <iframe :src="getYoutube(selectedVideo.link)" frameborder="0" class="w-full md:h-96 h-60 rounded-2xl"></iframe>
+            <iframe :src="getYoutube(selectedVideo.link)" frameborder="0" class="w-full md:h-96 h-60 rounded-2xl"
+                allowfullscreen></iframe>
 
             <h2 class="mt-5 text-xl font-bold">{{ selectedVideo.title }}</h2>
             <p class="mb-5 mt-3 leading-loose">{{ selectedVideo.description }}</p>

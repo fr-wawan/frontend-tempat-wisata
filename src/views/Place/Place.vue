@@ -1,10 +1,12 @@
 <template>
-    <div class="py-8">
-        <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-10/12">
+    <div class="py-8 mx-40">
+        <h3 class="font-extrabold text-[#4475F2]">DESTINASI FAVORIT</h3>
+        <h1 class="font-extrabold text-4xl">Temukan Destinasi Favoritmu</h1>
+        <div class="grid grid-cols-4 mt-10 gap-10">
             <PlaceCard v-for="place in places" :key="place.id" :place="place" class="mb-10" />
 
-            <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage" />
         </div>
+        <Pagination :current-page="currentPage" :total-pages="totalPages" :go-to-page="goToPage" />
     </div>
 </template>
 
@@ -14,9 +16,8 @@ import { onMounted, ref, computed } from 'vue';
 
 import Pagination from '@/components/Pagination.vue';
 import PlaceCard from '@/components/Place/PlaceCard.vue';
-
 const store = usePlaceStore();
-const paginate = ref(6);
+const paginate = ref(12);
 
 onMounted(() => {
     store.getPlaces(1, paginate.value);
